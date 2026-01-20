@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha sua Galáxia - FutureCoders</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column align-items-center min-vh-100 text-white" 
+      style="background-image: url('{% static 'img/background.png' %}'); background-size: cover; background-position: center;">
+
+    <!-- Container Principal Centralizado -->
+    <div class="col-11 col-sm-8 col-md-6 col-lg-4 text-center p-4 flex-grow-1 d-flex flex-column justify-content-center">
+        
+        <!-- Títulos -->
+        <h2 class="fw-bold mb-1 display-6">Bem-vindo</h2>
+        <h1 class="fw-bold mb-5 display-6">FutureCoder</h1>
+
+        <h3 class="h5 fw-bold mb-5">Escolha uma Galáxia</h3>
+
+        <!-- Área das Galáxias (Grid de 2 Colunas) -->
+        <div class="row w-300 justify-content-center mb-5 mt-5">
+            
+            <!-- Opção 1: Front-end -->
+            <div class="col-6 text-center">
+                <!-- Link envolvendo a imagem para torná-la clicável -->
+                <a href="#" class="text-decoration-none text-white d-block transition-transform">
+                    <!-- Substitua 'galaxia_front.png' pela imagem correta -->
+                    <img src="{% static 'img/galaxia_front.png' %}" alt="Galáxia Front-end" class="img-fluid" style="max-width:100px;">
+                    <p class="fw-bold fs-4">Galáxia<br>Front-end</p>
+                </a>
+            </div>
+
+            <!-- Opção 2: Back-end -->
+            <div class="col-6 text-center">
+                <a href="#" class="text-decoration-none text-white d-block transition-transform">
+                    <!-- Substitua 'galaxia_back.png' pela imagem correta -->
+                    <img src="{% static 'img/galaxia_back1.png' %}" alt="Galáxia Back-end" class="img-fluid mb-2" style="max-width: 100px;">
+                    <p class="fw-bold fs-4">Galáxia<br>Back-end</p>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Astronauta no Rodapé -->
+    <div class="mt-auto pb-4">
+        <img src="{% static 'img/astronauta_sem_fundo.png' %}" alt="Astronauta" class="img-fluid" style="width: 80px;">
+    </div>
+
+    <!-- Script Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- CSS Extra para efeito de Hover (Zoom ao passar o mouse) -->
+    <style>
+        .transition-transform:hover img {
+            transform: scale(1.1); /* Aumenta 10% ao passar o mouse */
+            transition: transform 0.3s ease;
+        }
+    </style>
+</body>
+</html>
