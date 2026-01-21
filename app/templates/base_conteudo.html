@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}FutureCoders{% endblock %}</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Fundo Padrão Espacial */
+        body {
+            background-image: url('{% static "img/background.png" %}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: white;
+        }
+
+        /* Botão Voltar Circular */
+        .btn-back-circle {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.3rem;
+            transition: background 0.3s;
+        }
+        .btn-back-circle:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+            color: white;
+        }
+
+        /* Card de Conteúdo (opcional para destacar) */
+        .content-card {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Estilos de Texto */
+        .text-highlight {
+            color: #FFFF00;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Container Principal -->
+    <div class="container py-4" style="max-width: 700px;">
+        
+        <!-- Cabeçalho (Botão Voltar + Título + Astronauta) -->
+        <header class="d-flex align-items-center justify-content-between mb-4">
+            <div class="d-flex align-items-center gap-3">
+                <a href="{% block back_url %}javascript:history.back(){% endblock %}" 
+                   class="btn-back-circle text-decoration-none">
+                    &lt;
+                </a>
+                <h1 class="h5 fw-bold m-0">
+                    {% block page_title %}Título da Página{% endblock %}
+                </h1>
+            </div>
+            
+            <!-- Astronauta Flutuante -->
+            <img src="{% static 'img/astronauta_sem_fundo.png' %}" 
+                 alt="Astronauta" 
+                 class="astro-float" 
+                 style="width: 50px;">
+        </header>
+
+        <!-- Área de Conteúdo Principal (Flexível) -->
+        <main class="mb-5">
+            {% block content %}
+            <!-- Conteúdo padrão (sobrescrever nos templates filhos) -->
+            <div class="content-card">
+                <h2 class="h4 fw-bold mb-3">Bem-vindo!</h2>
+                <p>Este é o template base. Sobrescreva o bloco <code>content</code> para adicionar seu conteúdo.</p>
+            </div>
+            {% endblock %}
+        </main>
+
+        <!-- Rodapé (Galáxia) -->
+        <footer class="text-center mt-5 pb-4">
+            {% block footer %}
+            <img src="{% static 'img/galaxia_back.png' %}" 
+                 alt="Galáxia" 
+                 style="width: 70px; opacity: 0.8;">
+            {% endblock %}
+        </footer>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

@@ -12,30 +12,31 @@
         /* Linha Vertical da Timeline */
         .timeline-line {
             position: absolute;
-            left: 20px;
-            top: 50px;
-            bottom: 50px;
-            width: 2px;
+            left: 1.25rem;
+            top: 1.25rem;
+            bottom: 3.125rem;
+            width: 0.125rem;
+            height: 36.25rem;
             background-color: #FFFF00; /* Amarelo */
         }
 
         /* Setas da Timeline */
         .timeline-arrow {
             position: absolute;
-            left: 20px; /* Começa na linha */
+            left: 0.3125rem; /* Começa na linha */
             top: 50%;
-            width: 20px;
-            height: 2px;
+            width: 0.9375rem;
+            height: 0.125rem;
             background-color: #FFFF00;
         }
         .timeline-arrow::after {
             content: '';
             position: absolute;
             right: 0;
-            top: -4px;
-            border-left: 8px solid #FFFF00;
-            border-top: 5px solid transparent;
-            border-bottom: 5px solid transparent;
+            top: -0.25rem;
+            border-left: 0.5rem solid #FFFF00;
+            border-top: 0.3125rem solid transparent;
+            border-bottom: 0.3125rem solid transparent;
         }
 
         /* Botão de Missão */
@@ -44,8 +45,8 @@
             color: #000;
             border: none;
             font-weight: 800; /* Extra Bold */
-            border-radius: 50px; /* Pílula */
-            padding: 12px 20px;
+            border-radius: 3.125rem; /* Pílula */
+            padding: 0.75rem 1.25rem;
             width: 100%;
             transition: transform 0.2s, background-color 0.2s;
             position: relative;
@@ -69,7 +70,7 @@
                 Missões: <span style="color: #FFFF00;">planeta JavaScript</span>
             </h1>
             <!-- Astronauta Pequeno -->
-            <img src="{% static 'img/astronauta_sem_fundo.png' %}" alt="Astronauta" style="width: 50px;">
+            <a href="{% url 'galaxia_back' %}"><img src="{% static 'img/astronauta_sem_fundo.png' %}" alt="Astronauta" style="width: 50px;"></a>
         </div>
 
         <!-- Lista de Missões com Linha Conectora -->
@@ -81,7 +82,7 @@
             <!-- Missão 1 -->
             <div class="d-flex align-items-center mb-5 position-relative">
                 <div class="timeline-arrow"></div> <!-- Seta -->
-                <a href="#" class="mission-btn text-decoration-none d-block ms-4 shadow-sm">
+                <a href="{% url 'conteudo' %}" class="mission-btn text-decoration-none d-block ms-4 shadow-sm">
                     Conceitos da linguagem
                 </a>
             </div>
@@ -138,7 +139,7 @@
 
         <!-- Galáxia no Rodapé (Ícone Branco/Azul que criamos) -->
         <div class="text-center mt-5">
-            <a href="{% url 'galaxia_front' %}"><img src="{% static 'img/galaxia_front.png' %}" alt="Galáxia" style="width: 80px; opacity: 0.9;"></a>
+            <a href="{% url 'galaxia_back' %}"><img src="{% static 'img/galaxia_back.png' %}" alt="Galáxia" style="width: 80px; opacity: 0.9;"></a>
             <h2 class="h6 mt-2 fw-bold m-0">Galáxia Front-end</h2>
         </div>
 

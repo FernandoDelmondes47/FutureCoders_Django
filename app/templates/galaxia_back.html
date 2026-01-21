@@ -50,7 +50,7 @@
         <!-- Cabeçalho (Botão Voltar + Título + Astronauta) -->
         <div class="d-flex align-items-center justify-content-between mb-5">
             <div class="d-flex align-items-center gap-3">
-                <a href="javascript:history.back()" class="btn-back text-decoration-none">
+                <a href="{% url 'escolha_galaxia' %}" class="btn-back text-decoration-none">
                     &lt; <!-- Símbolo de menor que (<) -->
                 </a>
                 <h2 class="h5 fw-bold m-0">Galáxia Back-end</h2>
@@ -66,7 +66,7 @@
             <div class="planet-item align-self-start text-center">
                 <a href="#" class="text-decoration-none text-white d-block">
                     <!-- Substitua 'planeta_js.png' pela imagem amarela/verde -->
-                    <img src="{% static 'img/planeta_javascript.png' %}" alt="JavaScript" class="img-fluid mb-2" style="width: 120px;">
+                    <a href="{% url 'planeta_javascript_back' %}"><img src="{% static 'img/planeta_javascript.png' %}" alt="JavaScript" class="img-fluid mb-2" style="width: 120px;"></a>
                     <p class="fw-bold small">Planeta JavaScript</p>
                 </a>
             </div>

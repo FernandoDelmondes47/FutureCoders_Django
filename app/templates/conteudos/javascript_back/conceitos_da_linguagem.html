@@ -1,0 +1,89 @@
+{% extends 'base_conteudo.html' %}
+{% load static %}
+
+<!-- Título da Aba do Navegador -->
+{% block title %}Conceitos - FutureCoders{% endblock %}
+
+<!-- Título do Cabeçalho -->
+{% block page_title %}
+    <h1>Conceitos da linguagem</h1>
+{% endblock %}
+
+<!-- Estilos Específicos para Código -->
+{% block extra_styles %}
+<style>
+    /* Estilo para blocos de código */
+    .code-block {
+        background-color: #1e1e1e; /* Fundo escuro tipo VS Code */
+        color: #d4d4d4;
+        border-radius: 10px;
+        padding: 15px;
+        font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        border-left: 4px solid #FFFF00; /* Linha amarela lateral */
+        margin-bottom: 20px;
+        overflow-x: auto;
+    }
+    
+    .keyword { color: #569cd6; } /* Azul (function, var) */
+    .string { color: #ce9178; }  /* Laranja (strings) */
+    .comment { color: #6a9955; font-style: italic; } /* Verde (comentários) */
+</style>
+{% endblock %}
+
+<!-- URL do Botão Voltar -->
+{% block back_url %}{% url 'planeta_javascript_back' %}{% endblock %}
+
+
+<!-- Conteúdo Principal -->
+{% block content %}
+
+    <!-- Vídeo (Opcional) -->
+    {% if topico.video_url %}
+    <div class="ratio ratio-16x9 mb-4 rounded overflow-hidden shadow">
+        <iframe src="{{ topico.video_url }}" title="Vídeo da Aula" allowfullscreen></iframe>
+    </div>
+    {% endif %}
+
+    <!-- Card de Explicação -->
+    <div class="content-card mb-4">
+        <h2 class="h4 fw-bold text-highlight mb-3">Entendendo os conceitos</h2>
+        <div class="text-white-50 fs-6" style="line-height: 1.6;">
+            <p></p>
+        </div>
+    </div>
+
+    <!-- Exemplo de Código -->
+    {% if topico.codigo_exemplo %}
+    <h3 class="h5 fw-bold mb-2 ps-2">Exemplo Prático:</h3>
+    <div class="code-block shadow-sm">
+        <pre class="m-0"><code>{{ topico.codigo_exemplo }}</code></pre>
+    </div>
+    {% endif %}
+
+    <!-- Botões de Navegação -->
+    <div class="d-flex justify-content-between align-items-center mt-5">
+        
+        <!-- Botão Anterior (Se existir) -->
+        {% if topico_anterior %}
+        <a href="{% url 'detalhe_topico' topico_anterior.id %}" class="btn btn-outline-light rounded-pill px-4 fw-bold">
+            &lt; Anterior
+        </a>
+        {% else %}
+        <div></div> <!-- Espaço vazio para manter alinhamento -->
+        {% endif %}
+
+        <!-- Botão Próximo (Se existir) -->
+        {% if topico_proximo %}
+        <a href="{% url 'detalhe_topico' topico_proximo.id %}" class="btn btn-warning rounded-pill px-4 fw-bold">
+            Próximo &gt;
+        </a>
+        {% else %}
+        <!-- Botão Finalizar Missão -->
+        <a href="{% url 'planeta_javascript_back' %}" class="btn btn-success rounded-pill px-4 fw-bold">
+            Concluir Missão ✓
+        </a>
+        {% endif %}
+
+    </div>
+
+{% endblock %}
