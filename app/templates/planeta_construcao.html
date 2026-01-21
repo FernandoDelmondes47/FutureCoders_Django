@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em Construção - FutureCoders</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Animação suave para o astronauta flutuar */
+        @keyframes float-astro {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        .astro-float {
+            animation: float-astro 6s ease-in-out infinite;
+        }
+
+        /* Botão Voltar (Estilo Consistente) */
+        .btn-back-circle {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+        .btn-back-circle:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column align-items-center justify-content-center min-vh-100 text-white text-center position-relative" 
+      style="background-image: url('{% static 'img/background.png' %}'); background-size: cover; background-position: center;">
+
+    <!-- Botão Voltar Flutuante no Topo -->
+    <a href="javascript:history.back()" class="btn-back-circle text-decoration-none">
+        &lt;
+    </a>
+
+    <!-- Conteúdo Principal -->
+    <div class="col-11 col-sm-8 col-md-6 p-4">
+        
+        <!-- Astronauta Maior (Flutuando) -->
+        <div class="mb-4">
+            <img src="{% static 'img/astronauta_sem_fundo.png' %}" alt="Astronauta" class="img-fluid astro-float" style="width: 150px; opacity: 0.9;">
+        </div>
+
+        <!-- Título -->
+        <h1 class="fw-bold mb-3 display-6">Ops!</h1>
+        
+        <!-- Mensagem -->
+        <h2 class="h4 fw-bold mb-4">Planeta em Construção</h2>
+        
+        <p class="lead fs-6 text-white-100 fw-bold mb-5 px-3">
+            Nossos robôs ainda estão terraformando este mundo. <br>
+            Volte em breve para explorar novos conhecimentos!
+        </p>
+
+        <!-- Botão de Ação -->
+        <a href="javascript:history.back()" class="btn btn-light rounded-pill py-3 px-5 fw-bolder shadow-sm">
+            Voltar para a Galáxia
+        </a>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

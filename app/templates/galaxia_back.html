@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha seu Planeta - FutureCoders</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Animação suave de flutuação para os planetas */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .planet-item {
+            animation: float 4s ease-in-out infinite;
+        }
+        /* Delay diferente para cada planeta não flutuar igual */
+        .planet-item:nth-child(odd) { animation-delay: 0s; }
+        .planet-item:nth-child(even) { animation-delay: 2s; }
+
+        /* Estilo do botão de voltar */
+        .btn-back {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn-back:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+
+<body class="min-vh-100 text-white" 
+      style="background-image: url('{% static 'img/background.png' %}'); background-size: cover; background-position: center; background-attachment: fixed;">
+
+    <div class="container py-4" style="max-width: 500px;"> <!-- Limita largura em desktop -->
+        
+        <!-- Cabeçalho (Botão Voltar + Título + Astronauta) -->
+        <div class="d-flex align-items-center justify-content-between mb-5">
+            <div class="d-flex align-items-center gap-3">
+                <a href="javascript:history.back()" class="btn-back text-decoration-none">
+                    &lt; <!-- Símbolo de menor que (<) -->
+                </a>
+                <h2 class="h5 fw-bold m-0">Galáxia Back-end</h2>
+            </div>
+            <!-- Astronauta Pequeno no Topo -->
+            <img src="{% static 'img/astronauta_sem_fundo.png' %}" alt="Astronauta" style="width: 50px;">
+        </div>
+
+        <!-- Lista de Planetas (Zigue-Zague) -->
+        <div class="d-flex flex-column gap-5">
+
+            <!-- 1. Planeta JavaScript (Alinhado à Esquerda) -->
+            <div class="planet-item align-self-start text-center">
+                <a href="#" class="text-decoration-none text-white d-block">
+                    <!-- Substitua 'planeta_js.png' pela imagem amarela/verde -->
+                    <img src="{% static 'img/planeta_javascript.png' %}" alt="JavaScript" class="img-fluid mb-2" style="width: 120px;">
+                    <p class="fw-bold small">Planeta JavaScript</p>
+                </a>
+            </div>
+
+            <!-- 2. Planeta Python (Alinhado à Direita) -->
+            <div class="planet-item align-self-end text-center">
+                <a href="#" class="text-decoration-none text-white d-block">
+                    <!-- Substitua 'planeta_python.png' pela imagem azul/amarela -->
+                    <img src="{% static 'img/planeta_python.png' %}" alt="Python" class="img-fluid mb-2" style="width: 120px;">
+                    <p class="fw-bold small">Planeta Python</p>
+                </a>
+            </div>
+
+            <!-- 3. Planeta Java (Alinhado à Esquerda) -->
+            <div class="planet-item align-self-start text-center">
+                <a href="#" class="text-decoration-none text-white d-block">
+                    <!-- Substitua 'planeta_java.png' pela imagem vermelha/azul -->
+                    <img src="{% static 'img/planeta_java.png' %}" alt="Java" class="img-fluid mb-2" style="width: 120px;">
+                    <p class="fw-bold small">Planeta Java</p>
+                </a>
+            </div>
+
+            <!-- 4. Planeta PHP (Alinhado à Direita) -->
+            <div class="planet-item align-self-end text-center">
+                <a href="#" class="text-decoration-none text-white d-block">
+                    <!-- Substitua 'planeta_php.png' pela imagem roxa -->
+                    <img src="{% static 'img/planeta_php.png' %}" alt="PHP" class="img-fluid mb-2" style="width: 120px;">
+                    <p class="fw-bold small">Planeta PHP</p>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

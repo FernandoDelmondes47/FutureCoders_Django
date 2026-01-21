@@ -26,7 +26,7 @@
             <!-- Opção 1: Front-end -->
             <div class="col-6 text-center">
                 <!-- Link envolvendo a imagem para torná-la clicável -->
-                <a href="#" class="text-decoration-none text-white d-block transition-transform">
+                <a href="{% url 'galaxia_front' %}" class="text-decoration-none text-white d-block transition-transform">
                     <!-- Substitua 'galaxia_front.png' pela imagem correta -->
                     <img src="{% static 'img/galaxia_front.png' %}" alt="Galáxia Front-end" class="img-fluid" style="max-width:100px;">
                     <p class="fw-bold fs-4">Galáxia<br>Front-end</p>
@@ -35,9 +35,9 @@
 
             <!-- Opção 2: Back-end -->
             <div class="col-6 text-center">
-                <a href="#" class="text-decoration-none text-white d-block transition-transform">
+                <a href="{% url 'galaxia_back' %}" class="text-decoration-none text-white d-block transition-transform">
                     <!-- Substitua 'galaxia_back.png' pela imagem correta -->
-                    <img src="{% static 'img/galaxia_back1.png' %}" alt="Galáxia Back-end" class="img-fluid mb-2" style="max-width: 100px;">
+                    <img src="{% static 'img/galaxia_back.png' %}" alt="Galáxia Back-end" class="img-fluid mb-2" style="max-width: 100px;">
                     <p class="fw-bold fs-4">Galáxia<br>Back-end</p>
                 </a>
             </div>

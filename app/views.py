@@ -9,3 +9,15 @@ def cadastro_view(request):
 
 def escolhaGalaxia_view(request):
     return render(request, 'escolha_galaxia.html')
+
+def galaxia_back_view(request):
+    return render(request, 'galaxia_back.html')
+
+def galaxia_front_view(request):
+    return render(request, 'galaxia_front.html')
+
+def construcao_view(request):
+    return render(request, 'planeta_construcao.html')
+
+def planeta_javascript_view(request):
+    return render(request, 'planeta_javascript.html')
