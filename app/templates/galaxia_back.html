@@ -64,16 +64,16 @@
 
             <!-- 1. Planeta JavaScript (Alinhado à Esquerda) -->
             <div class="planet-item align-self-start text-center">
-                <a href="#" class="text-decoration-none text-white d-block">
+                <a href="{% url 'planeta_javascript_back' %}" class="text-decoration-none text-white d-block">
                     <!-- Substitua 'planeta_js.png' pela imagem amarela/verde -->
-                    <a href="{% url 'planeta_javascript_back' %}"><img src="{% static 'img/planeta_javascript.png' %}" alt="JavaScript" class="img-fluid mb-2" style="width: 120px;"></a>
+                    <img src="{% static 'img/planeta_javascript.png' %}" alt="JavaScript" class="img-fluid mb-2" style="width: 120px;">
                     <p class="fw-bold small">Planeta JavaScript</p>
-                </a>
+                </img>
             </div>
 
             <!-- 2. Planeta Python (Alinhado à Direita) -->
             <div class="planet-item align-self-end text-center">
-                <a href="#" class="text-decoration-none text-white d-block">
+                <a href="{% url 'planeta_construcao' %}" class="text-decoration-none text-white d-block">
                     <!-- Substitua 'planeta_python.png' pela imagem azul/amarela -->
                     <img src="{% static 'img/planeta_python.png' %}" alt="Python" class="img-fluid mb-2" style="width: 120px;">
                     <p class="fw-bold small">Planeta Python</p>
@@ -82,7 +82,7 @@
 
             <!-- 3. Planeta Java (Alinhado à Esquerda) -->
             <div class="planet-item align-self-start text-center">
-                <a href="#" class="text-decoration-none text-white d-block">
+                <a href="{% url 'planeta_construcao' %}" class="text-decoration-none text-white d-block">
                     <!-- Substitua 'planeta_java.png' pela imagem vermelha/azul -->
                     <img src="{% static 'img/planeta_java.png' %}" alt="Java" class="img-fluid mb-2" style="width: 120px;">
                     <p class="fw-bold small">Planeta Java</p>
@@ -91,7 +91,7 @@
 
             <!-- 4. Planeta PHP (Alinhado à Direita) -->
             <div class="planet-item align-self-end text-center">
-                <a href="#" class="text-decoration-none text-white d-block">
+                <a href="{% url 'planeta_construcao' %}" class="text-decoration-none text-white d-block">
                     <!-- Substitua 'planeta_php.png' pela imagem roxa -->
                     <img src="{% static 'img/planeta_php.png' %}" alt="PHP" class="img-fluid mb-2" style="width: 120px;">
                     <p class="fw-bold small">Planeta PHP</p>
